@@ -1,6 +1,5 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/django,python,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=django,python,macos
+# Created by https://www.toptal.com/developers/gitignore/api/django,macos,python
+# Edit at https://www.toptal.com/developers/gitignore?templates=django,macos,python
 
 ### Django ###
 *.log
@@ -257,4 +256,4 @@ Temporary Items
 # profiling data
 
 
-# End of https://www.toptal.com/developers/gitignore/api/django,python,macos
+# End of https://www.toptal.com/developers/gitignore/api/django,macos,python
