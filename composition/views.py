@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
@@ -38,6 +39,12 @@ def remove_memo(request):
     memo1.delete()
     return Response({"message": "success"}, status=status.HTTP_204_NO_CONTENT)
 
-@api_view(['POST'])
+
+@api_view(['PUT'])
 @permission_classes([AllowAny])
-def change_memo(request):
+def update_memo(request, memo2_pk):
+    memo2 = get_object_or_404(Memo, pk=memo2_pk)
+    serializer = MemoSerializer(instance=memo2, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
